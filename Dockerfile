@@ -29,4 +29,4 @@ RUN git clone https://github.com/Shougo/neobundle.vim  ~/.vim/bundle/neobundle.v
 RUN wget https://raw.githubusercontent.com/ogasawaraShinnosuke/python3-docker-env/master/.vimrc
 
 WORKDIR /root
-CMD ["/bin/bash"]
+CMD ["/bin/zsh"]
