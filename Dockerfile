@@ -20,6 +20,11 @@ RUN pip install readline
 RUN pip install virtualenv
 RUN pip install django
 
+RUN pip3 install --upgrade pip
+RUN pip3 install readline
+RUN pip3 install virtualenv
+RUN pip3 install django
+
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 RUN echo alias vi="vim" >>~/.zshrc
 
