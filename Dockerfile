@@ -35,7 +35,11 @@ RUN wget https://raw.githubusercontent.com/ogasawaraShinnosuke/python3-docker-en
 
 WORKDIR /root
 RUN mkdir workspace
+
+WORKDIR /root/workspace
 RUN virtualenv --no-site-packages develop
+RUN source develop/bin/activate
+RUN pip3 install numpy matplotlib jupyter
 
 WORKDIR /root
 CMD ["/bin/zsh"]
