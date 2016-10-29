@@ -2,8 +2,9 @@ FROM centos:latest
 
 RUN yum -y update
 RUN yum -y groupinstall "Development Tools"
-RUN yum -y install kernel-devel kernel-headers gcc-c++ patch libyaml-devel libffi-devel autoconf automake make libtool bison tk-devel zip wget tar gcc zlib \
-  zlib-devel bzip2 bzip2-devel readline readline-devel sqlite sqlite-devel openssl openssl-devel git gdbm-devel python-devel zsh vim
+RUN yum -y install tree kernel-devel kernel-headers gcc-c++ patch libyaml-devel libffi-devel autoconf automake make libtool bison \
+  tk-devel zip wget tar gcc zlib zlib-devel bzip2 bzip2-devel readline readline-devel sqlite sqlite-devel openssl openssl-devel git \
+  gdbm-devel python-devel zsh vim
 
 WORKDIR /root
 RUN wget https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tgz
@@ -36,10 +37,10 @@ RUN wget https://raw.githubusercontent.com/ogasawaraShinnosuke/python3-docker-en
 WORKDIR /root
 RUN mkdir workspace
 
-WORKDIR /root/workspace
-RUN virtualenv --no-site-packages develop
-RUN source develop/bin/activate
-RUN pip3 install numpy matplotlib jupyter
+# WORKDIR /root/workspace
+# RUN virtualenv --no-site-packages develop
+# RUN source develop/bin/activate
+# RUN pip3 install numpy matplotlib jupyter
 
 WORKDIR /root
 CMD ["/bin/zsh"]
